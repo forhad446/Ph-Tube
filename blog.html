@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PH Tube</title>
+    <link rel="shortcut icon" href="./img/Logo.png" type="image/x-icon">
+    <!-- Daisy & Tailwind Linked -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter font added from google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        .font-inter {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .btn-Active {
+            background-color: #FF1F3D;
+        }
+    </style>
+</head>
+
+<body class="font-inter max-w-7xl mx-auto">
+    <header>
+        <nav class="my-8 px-2 lg:px-0 border-b-2 pb-6">
+            <div class="flex justify-between">
+                <div class="">
+                    <a href="#">
+                        <img src="./img/Logo.png" alt="">
+                    </a>
+                </div>
+                <div class="">
+                    <button id="home_btn" onclick="sortHandle()"
+                        class="text-lg font-medium text-[#252525] px-2 lg:px-5 py-2 bg-[#25252533] rounded-md">Home</button>
+                </div>
+                <div class="">
+                    <button id="blog_btn"
+                        class="text-lg font-medium text-[#FFF] px-5 py-2 bg-[#FF1F3D] rounded-md">Blog</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+                <div class="mb-10 border-t border-b divide-y">
+                    <div class="py-8 text-center">
+                        <div class="sm:col-span-3 lg:col-span-2">
+                            <div class="mb-3">
+                                <p class="text-3xl font-extrabold leading-none sm:text-4xl xl:text-4xl">
+                                    Discuss the scope of var, let, and const
+                                </p>
+                            </div>
+                            <p class="text-gray-700">
+                                Before the coming of ES6 ,var declarations ruled .it is the global variable. it has some issue to use var variable of your code . it works inside of function and also the same time works outside of function.
+                            </p>
+                            <p class="text-gray-700">
+                                let is a block scope variable, its work inside the function , you can't access this variable outsite of function, if you don't declare outsite of function. and it's variable will do re-assign if you want.
+                            </p>
+                            <p class="text-gray-700">
+                                there's const. Like let, const is block-scoped, but there's one big difference: once
+                                you've assigned a value to a const variable, you can't reassign it. This means that
+                                const variables are read-only. If you try to change the value of a variable assigned
+                                with const, you'll get an error.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="py-8 text-center">
+                        <div class="sm:col-span-3 lg:col-span-2">
+                            <div class="mb-3">
+                                <p class="text-3xl font-extrabold leading-none sm:text-4xl xl:text-4xl">
+                                    Tell us the use cases of null and undefined
+                                </p>
+                            </div>
+                            <p class="text-gray-700">
+                                In JavaScript, “null” and “undefined” have different meanings.null is a special keyword of JavaScript and it has a value but undefine is undefine. it has no value, if you declare a variable and not assign something then you will get a undefine
+                            </p>
+                        </div>
+                    </div>
+                    <div class="py-8 text-center">
+                        <div class="sm:col-span-3 lg:col-span-2">
+                            <div class="mb-3">
+                                <p class="text-3xl font-extrabold leading-none sm:text-4xl xl:text-4xl">
+                                    What do you mean by REST API?
+                                </p>
+                            </div>
+                            <p class="text-gray-700">
+                                REST API, means Representational State Transfer Application Programming
+                                Interface, is a set of architectural principles and constraints for designing and
+                                interacting with web services.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
