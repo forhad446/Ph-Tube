@@ -17,19 +17,26 @@ const loadCategory = async () => {
 }
 loadCategory()
 // show all video
-const loadVideos = async (id = '1000', sortArr) => {
-    // console.log(sortArr)
-    const res = await fetch(
-        `https://openapi.programming-hero.com/api/videos/category/${id}`
-    );
-    const data = await res.json();
-    const allData = data.data;
+const loadVideos = async (sortArr = [], id = '1000') => {
+    if(sortArr.length == ''){
+        const res = await fetch(
+            `https://openapi.programming-hero.com/api/videos/category/${id}`
+        );
+        const data = await res.json();
+        const allData = data.data;
+        displayVideo(allData);
+    }else{
+        const allData = sortArr;
+        displayVideo(allData);
+    }
+    
+}
+const displayVideo = (allData) => {
     // check the length of array that found by forEach Loop
     if (!allData.length) {
         document.getElementById('404_container').classList.remove('hidden')
     }
     else {
-        // alert(allData.authors[0].profile_name)
         document.getElementById('404_container').classList.add('hidden')
     }
     const show_all_video_container = document.getElementById('show_all_video_container');
@@ -73,12 +80,10 @@ const loadVideos = async (id = '1000', sortArr) => {
         `;
         show_all_video_container.appendChild(div);
     })
-    // sortHandle(id);
 }
-loadVideos()
 // clickBtnHandler start
 const clickBtnHandler = id => {
-    loadVideos(id)
+    loadVideos([], id)
 }
 // sorting data 
 const sortHandle = async (id = '1000') => {
@@ -87,6 +92,7 @@ const sortHandle = async (id = '1000') => {
     );
     const data = await res.json();
     const item = data.data;
-    item.sort((a, b) => b.others.views.slice(0,3) - a.others.views.slice(0,3))
-    // loadVideos(item);
+    item.sort((a, b) => b.others.views.slice(0, 3) - a.others.views.slice(0, 3));
+    loadVideos(item);
 }
+loadVideos()
